@@ -1,11 +1,37 @@
 <html>
     <head>
         <title>Asad Mukhtarr</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <h2 id="asad"></h2>
-        <h1>I am first World of page</h1>
+        <div class="container">
+            <h2 id="asad"></h2>
+            <h1>Count Is: <span id="cv"></span></h1>
+            <button class="btn btn-danger" onclick="web()">For +</button>
+            <button class="btn btn-danger" onclick="webmin()">For -</button>
+            <hr />
+            <input type="text" onkeyup="tester(this.value)" class="form-control">
+            <p id="demo"></p>
+            <hr />
+            <button>Click Me</button>
+        </div>
         <script>
+         function tester(v){
+            document.getElementById("demo").innerHTML = v;
+         }
+         var n = 0;
+         document.getElementById("cv").innerHTML = 0;
+         function web(){
+            var n = document.getElementById("cv").innerHTML;
+            var m = parseInt(n) + parseInt(1);
+            document.getElementById("cv").innerHTML = m;
+         }
+         function webmin(){
+            var n = document.getElementById("cv").innerHTML;
+            var m = parseInt(n) - 1;
+            document.getElementById("cv").innerHTML = m;
+         }
             // var , let , const ..
             // string , integer , float ..
              x = 100; // integer (number) ..
@@ -29,7 +55,6 @@
              }
              var1 = 1;
              var2 = [];
-             console.log(typeof(var1+var2));
              if(x > y){
                 result = "X is greater";
              } else if( x == y){
