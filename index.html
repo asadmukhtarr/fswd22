@@ -5,18 +5,79 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="container">
-            <h2 id="asad"></h2>
-            <h1>Count Is: <span id="cv"></span></h1>
-            <button class="btn btn-danger" onclick="web()">For +</button>
-            <button class="btn btn-danger" onclick="webmin()">For -</button>
-            <hr />
-            <input type="text" onkeyup="tester(this.value)" class="form-control">
-            <p id="demo"></p>
-            <hr />
-            <button>Click Me</button>
+        <div class="container mt-5">
+            <div class="row">
+               <div class="col-lg-6">
+                  <h2 id="asad"></h2>
+                  <h1>Count Is: <span id="cv"></span></h1>
+                  <button class="btn btn-danger" onclick="web()">For +</button>
+                  <button class="btn btn-danger" onclick="webmin()">For -</button>
+                  <hr />
+                  <input type="text" onkeyup="tester(this.value)" class="form-control">
+                  <p id="demo"></p>
+                  <hr />
+                  <button class="btn btn-danger btn-sm" onclick="clicker()">Click Me</button>
+               </div>
+               <div class="col-lg-6">
+                  <div class="card">
+                     <table class="table table-bordered table-hover table-striped">
+                        <tr>
+                           <th>Growth Rate</th>
+                           <th>Result</th>
+                        </tr>
+                       <tr>
+                           <td colspan="2">
+                              <input type="text" placeholder="Enter Growth Rate" onkeyup="calculate(this.value)" id="ygr" class="form-control">
+                           </td>
+                       </tr>
+                       <tr>
+                           <th>Monhtly Growth Rate </th>
+                           <td id="mgr">Null</td>
+                       </tr>
+                       <tr>
+                           <th>Daily Growth Rate </th>
+                           <td id="dgr">Null</td>
+                        </tr>
+                        <tr>
+                           <th>Hourly Growth Rate </th>
+                           <td id="hgr">Null</td>
+                        </tr>
+                        <tr>
+                           <th>Per Mint Growth Rate </th>
+                           <td id="pmgr">Null</td>
+                        </tr>
+                        <tr>
+                           <th>Per Second Growth Rate </th>
+                           <td id="psgr">Null</td>
+                        </tr>
+                     </table>
+                  </div>
+               </div>
+            </div>
         </div>
         <script>
+         function calculate(ygr){
+           // var ygr = document.getElementById("ygr").value;
+            if(ygr === null || ygr === undefined || ygr === "") {
+               document.getElementById("ygr").style.border = "1px solid red";
+            } else {
+              var mgr = ygr / 12; // monthly 
+              var dgr = mgr / 30; // daily 
+              var hgr = dgr / 24; // hourly 
+              var pmgr = hgr / 60; // mints 
+              var psgr = pmgr / 60; // seconds ..
+              document.getElementById("mgr").innerHTML = mgr;
+              document.getElementById("dgr").innerHTML = dgr;
+              document.getElementById("hgr").innerHTML = hgr;
+              document.getElementById("pmgr").innerHTML = pmgr;
+              document.getElementById("psgr").innerHTML = psgr;
+
+
+            }
+         }
+         function clicker(){
+            alert('Click Me Button Is Clicked');
+         }
          function tester(v){
             document.getElementById("demo").innerHTML = v;
          }
