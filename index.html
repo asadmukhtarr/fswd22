@@ -5,125 +5,29 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     </head>
     <body>
-        <div class="container mt-5">
-            <div class="row">
-               <div class="col-lg-6">
-                  <h2 id="asad"></h2>
-                  <h1>Count Is: <span id="cv"></span></h1>
-                  <button class="btn btn-danger" onclick="web()">For +</button>
-                  <button class="btn btn-danger" onclick="webmin()">For -</button>
-                  <hr />
-                  <input type="text" onkeyup="tester(this.value)" class="form-control">
-                  <p id="demo"></p>
-                  <hr />
-                  <button class="btn btn-danger btn-sm" onclick="clicker()">Click Me</button>
-               </div>
-               <div class="col-lg-6">
-                  <div class="card">
-                     <table class="table table-bordered table-hover table-striped">
-                        <tr>
-                           <th>Growth Rate</th>
-                           <th>Result</th>
-                        </tr>
-                       <tr>
-                           <td colspan="2">
-                              <input type="text" placeholder="Enter Growth Rate" onkeyup="calculate(this.value)" id="ygr" class="form-control">
-                           </td>
-                       </tr>
-                       <tr>
-                           <th>Monhtly Growth Rate </th>
-                           <td id="mgr">Null</td>
-                       </tr>
-                       <tr>
-                           <th>Daily Growth Rate </th>
-                           <td id="dgr">Null</td>
-                        </tr>
-                        <tr>
-                           <th>Hourly Growth Rate </th>
-                           <td id="hgr">Null</td>
-                        </tr>
-                        <tr>
-                           <th>Per Mint Growth Rate </th>
-                           <td id="pmgr">Null</td>
-                        </tr>
-                        <tr>
-                           <th>Per Second Growth Rate </th>
-                           <td id="psgr">Null</td>
-                        </tr>
-                     </table>
-                  </div>
-               </div>
-            </div>
-        </div>
-        <script>
-         function calculate(ygr){
-           // var ygr = document.getElementById("ygr").value;
-            if(ygr === null || ygr === undefined || ygr === "") {
-               document.getElementById("ygr").style.border = "1px solid red";
-            } else {
-              var mgr = ygr / 12; // monthly 
-              var dgr = mgr / 30; // daily 
-              var hgr = dgr / 24; // hourly 
-              var pmgr = hgr / 60; // mints 
-              var psgr = pmgr / 60; // seconds ..
-              document.getElementById("mgr").innerHTML = mgr;
-              document.getElementById("dgr").innerHTML = dgr;
-              document.getElementById("hgr").innerHTML = hgr;
-              document.getElementById("pmgr").innerHTML = pmgr;
-              document.getElementById("psgr").innerHTML = psgr;
-
-
-            }
-         }
-         function clicker(){
-            alert('Click Me Button Is Clicked');
-         }
-         function tester(v){
-            document.getElementById("demo").innerHTML = v;
-         }
-         var n = 0;
-         document.getElementById("cv").innerHTML = 0;
-         function web(){
-            var n = document.getElementById("cv").innerHTML;
-            var m = parseInt(n) + parseInt(1);
-            document.getElementById("cv").innerHTML = m;
-         }
-         function webmin(){
-            var n = document.getElementById("cv").innerHTML;
-            var m = parseInt(n) - 1;
-            document.getElementById("cv").innerHTML = m;
-         }
-            // var , let , const ..
-            // string , integer , float ..
-             x = 100; // integer (number) ..
-             y = 10; // integer (number) ..
-             a = 5; // integer (number) ..
-             b = 4; // integer (number) ..
-             name = "Webeducatorz | Learn Online Earn Online" // string ..
-             // In JS :  documnet  ==== Web Page ..
-             // Element === Html Tag ...
-             // web page mai sy is id ko select kr lo ..
-             // z is a collection of all variables
-             z = x + y + a + b;
-             u = x / y;
-             i = "01";
-             first_name = "1";
-             last_name  = "1";
-             full_name = parseInt(first_name) + parseInt(last_name);
-             var date = new Date();
-             function abc(a,b){
-                console.log(a+b);
-             }
-             var1 = 1;
-             var2 = [];
-             if(x > y){
-                result = "X is greater";
-             } else if( x == y){
-                result = "Both Are Equal";
-             } else {
-                result = "Y is greater";
-             }
-             document.getElementById("asad").innerHTML = result;
-        </script>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+         <div class="container-fluid">
+           <a class="navbar-brand" href="#">Navbar</a>
+           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="navbar-toggler-icon"></span>
+           </button>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+               <li class="nav-item">
+                 <a class="nav-link active" aria-current="page" href="#">Home</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" href="#">About</a>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="#">Students</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+             </ul>
+           </div>
+         </div>
+       </nav>
     </body>
 </html>
